@@ -1,1 +1,199 @@
-print
+<!-- 0115 hana‘s first pratice -->
+
+<!DOCTYPE html>
+<html lang="JA">
+    <head>
+         <meta charset="UTF-8">
+         <title>はなのエンジンニアの練習</title>
+         <style></style>
+</head>
+<body>
+    <h1>いらっしゃいませ</h1>
+    <h2>いらっしゃいませ</h2>
+    <h3>いらっしゃいませ</h3>
+    <h4>いらっしゃいませ</h4>
+    <h5>いらっしゃいませ</h5>
+<p>
+    <h1>今日は勉強しますか。</h1>
+    <br>
+    <h2>何か勉強してますか？</h2>
+    <br>
+    <h3>勉強してますよ</h3>
+</p>
+<hr>
+
+     <p>
+        今日は宇宙人に見てますか? UFOを見たことありますか? 面白い事があったら教えてください。
+     </p>
+
+     <p>
+        <u>今日は宇宙人に見てますか?</u>
+        <br>
+        <del>今日は宇宙人に見てますか?</del>
+        <br>
+        <strong>今日は宇宙人に見てますか?</strong>
+        <br>
+        <i>今日は宇宙人に見てますか?</i>
+     </p>
+
+     <p>
+       <span style="color:cadetblue;">今日は宇宙人に見てますか?</span>
+       <br>
+       <span style="color:blue;">今日はufoに見てますか?</span>
+       <br>
+       <span style="color:red;">今日は何を見てますか?</span>
+     </p>
+
+     <hr>
+
+     <p>
+        <h2>unordered list</h2>
+        <ul>
+            <li>UFO</li>
+            <li>宇宙人</li>
+            <li>AI</li>
+            <li>星</li>
+        </ul>
+
+      <hr>
+
+        <h2>ordered list</h2>
+        <ol>
+            <li>UFO</li>
+            <li>宇宙人</li>
+            <li>AI</li>
+            <li>星</li>
+        </ol>
+
+    <hr>
+  
+    <h2>nested list</h2>
+    <ul>
+        <li>UFO</li>
+
+        <li>宇宙人
+            <ul>
+                <li>地球人</li>
+                <li>火星人</li>
+            </ul>
+        </li>
+
+        <li>AI</li>
+
+        <li>星
+              <ul>
+                <li>太陽</li>
+                <li>地球</li>
+              </ul>
+        </li>
+    </ul> 
+
+<hr>
+
+    <h2>hyperlink</h2>
+         <a href="https://www.google.com/">Google</a>   
+
+<hr>
+    <h2>image</h2>
+    <img style="height: 200px; width: 400px;"
+    src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" alt="google logo" width="200">
+    <img style="height: 100px; width: 200px;"
+    src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" alt="google logo" width="200">
+
+<hr>
+
+   <h2>excel</h2>
+   <table border="1" style="color: blueviolet;">
+     <thead style="color: blue;">
+        <tr>
+           <th>名前</th>
+           <th>年齢</th>
+           <th>性別</th>
+           <th>ufo運転免許証</th>
+        </tr>
+     </thead>
+       <tbody>
+       <tr>
+           <td>宇宙人</td>
+           <td>100</td>
+           <td>male</td>
+           <td>有り</td>
+       </tr>
+
+       <tr>
+           <td>火星人</td>
+           <td>200</td>
+           <td>無し</td>
+           <td>有り</td>
+       </tr>
+
+       <tr>
+           <td>地球人</td>
+           <td>20</td>
+           <td>female</td>
+           <td>無し</td>
+       </tr>
+    
+     </tbody>
+   
+</table>
+
+<hr>
+
+   <h2>form</h2>
+
+   <form action="https://www.google.com/search" method="get">
+       <label for="username">ユーザー名</label>
+     <input type="text"   name="ユーザー名"  id="ユーザー名" placeholder="入力してください">
+     <br>
+     <br>
+     <label for="email">メールアドレス:</label>
+     <input type="email" name="email" id="email" id="email" placeholder="入力してください">
+     <br>
+     <br>
+     <label for="password">パスワード:</label>
+     <input type="password" name="password" id="password" placeholder="入力してください">
+     <br>
+     <br>
+     <label for="info">自己紹介:</label>
+     <textarea name="info" id="info" cols="30" rows="10" placeholder="入力してください"></textarea>
+     <br>
+     <br>
+     <input type="submit" value="送信">
+   </form>
+
+<hr>
+
+   <h2>radio buttons</h2>
+   <span>性別を選んでください</span>
+   <label for="gender-男"></label>
+   <input type="radio" name="gender" id="gender-男" value="男">男
+   <label for="gender-女"></label>
+   <input type="radio" name="gender" id="gender-女" value="女">女
+   
+<hr>
+
+   <h2>check box</h2>
+   <span>趣味を選んでください</span>
+   <label for="hobby-映画"></label>
+   <input type="checkbox" name="hobby" id="hobby-映画" value="映画">映画
+   <label for="hobby-サッカー"></label>
+   <input type="checkbox" name="hobby" id="hobby-サッカー" value="サッカー">⚽️
+   <label for="hobby-バスケットボール"></label>
+   <input type="checkbox" name="hobby" id="hobby-バスケットボール" value="バスケットボール">🏀
+   <label for="hobby-野球"></label>
+   <input type="checkbox" name="hobby" id="hobby-野球" value="野球">⚾️
+
+   <div style="height: 300px;"></div>
+ 
+
+   
+
+</body>
+
+
+</html>
+</body>
+</html>
+    
+  

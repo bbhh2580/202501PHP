@@ -1,12 +1,12 @@
 <!-- 0115 hana‘s first pratice -->
 
 <!DOCTYPE html>
-<html lang="JA">
+<html lang="ja">
     <head>
          <meta charset="UTF-8">
          <title>はなのエンジンニアの練習</title>
          <style></style>
-</head>
+    </head>
 <body>
     <h1>いらっしゃいませ</h1>
     <h2>いらっしゃいませ</h2>
@@ -27,15 +27,11 @@
      </p>
 
      <p>
-        <u>今日は宇宙人に見てますか?</u>
-        <br>
+        <u>今日は宇宙人に見てますか?</u>   
         <del>今日は宇宙人に見てますか?</del>
-        <br>
         <strong>今日は宇宙人に見てますか?</strong>
-        <br>
         <i>今日は宇宙人に見てますか?</i>
      </p>
-
      <p>
        <span style="color:cadetblue;">今日は宇宙人に見てますか?</span>
        <br>
@@ -45,7 +41,6 @@
      </p>
 
      <hr>
-
      <p>
         <h2>unordered list</h2>
         <ul>
@@ -55,9 +50,8 @@
             <li>星</li>
         </ul>
 
-      <hr>
-
-        <h2>ordered list</h2>
+    <hr>
+    <h2>ordered list</h2>
         <ol>
             <li>UFO</li>
             <li>宇宙人</li>
@@ -66,20 +60,16 @@
         </ol>
 
     <hr>
-  
     <h2>nested list</h2>
     <ul>
         <li>UFO</li>
-
         <li>宇宙人
             <ul>
                 <li>地球人</li>
                 <li>火星人</li>
             </ul>
         </li>
-
         <li>AI</li>
-
         <li>星
               <ul>
                 <li>太陽</li>
@@ -88,20 +78,18 @@
         </li>
     </ul> 
 
-<hr>
-
+    <hr>
     <h2>hyperlink</h2>
          <a href="https://www.google.com/">Google</a>   
 
-<hr>
+    <hr>
     <h2>image</h2>
     <img style="height: 200px; width: 400px;"
-    src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" alt="google logo" width="200">
+    src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" alt="google logo" >
     <img style="height: 100px; width: 200px;"
-    src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" alt="google logo" width="200">
+    src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" alt="google logo" >
 
-<hr>
-
+   <hr>
    <h2>excel</h2>
    <table border="1" style="color: blueviolet;">
      <thead style="color: blue;">
@@ -133,18 +121,14 @@
            <td>female</td>
            <td>無し</td>
        </tr>
-    
      </tbody>
-   
-</table>
+   </table>
 
-<hr>
-
+   <hr>
    <h2>form</h2>
-
    <form action="https://www.google.com/search" method="get">
        <label for="username">ユーザー名</label>
-     <input type="text"   name="ユーザー名"  id="ユーザー名" placeholder="入力してください">
+     <input type="text"   name="username"  id="username" placeholder="入力してください">
      <br>
      <br>
      <label for="email">メールアドレス:</label>
@@ -162,8 +146,7 @@
      <input type="submit" value="送信">
    </form>
 
-<hr>
-
+   <hr>
    <h2>radio buttons</h2>
    <span>性別を選んでください</span>
    <label for="gender-男"></label>
@@ -171,29 +154,79 @@
    <label for="gender-女"></label>
    <input type="radio" name="gender" id="gender-女" value="女">女
    
-<hr>
-
+   <hr>
    <h2>check box</h2>
    <span>趣味を選んでください</span>
    <label for="hobby-映画"></label>
-   <input type="checkbox" name="hobby" id="hobby-映画" value="映画">映画
+   <input type="checkbox" name="hobby" id="hobby-movie" value="映画">映画
    <label for="hobby-サッカー"></label>
-   <input type="checkbox" name="hobby" id="hobby-サッカー" value="サッカー">⚽️
+   <input type="checkbox" name="hobby" id="hobby-football" value="サッカー">⚽️
    <label for="hobby-バスケットボール"></label>
-   <input type="checkbox" name="hobby" id="hobby-バスケットボール" value="バスケットボール">🏀
+   <input type="checkbox" name="hobby" id="hobby-basketball" value="バスケットボール">🏀
    <label for="hobby-野球"></label>
-   <input type="checkbox" name="hobby" id="hobby-野球" value="野球">⚾️
+   <input type="checkbox" name="hobby" id="hobby-baseball" value="野球">⚾️
 
    <div style="height: 300px;"></div>
- 
 
-   
-
-</body>
-
-
-</html>
-</body>
-</html>
-    
+   <hr>
+   <h2>下拉选择</h2>
+   <select name="planet" id="planet">
+    <option value="" selected>--请选择降落星球--</option>
+     <option value="earth">地球</option>
+     <option value="mars">火星</option>
+     <option value="venus">金星</option>
+   </select>
+   <select name="language" id="language">
+     <option value="en">English</option>
+     <option value="zh">火星语</option>
+     <option value="jp">金星语</option>
+   </select>
   
+   <hr>
+   <h2>多媒体标签</h2>
+   <h3>audition label</h3>
+   <audio src="https://www.w3school.com.cn/i/song.mp3" type="audio/mpeg"controls loop autoplay>
+   </audio>
+
+   <h3>video label</h3>
+   <video src="https://www.w3school.com.cn/i/movie.mp4" type="video/mp4" controls loop autoplay>
+   </video>
+
+   <hr>
+   <h2>块级元素和行级元素</h2>
+   <span>块级元素独占一行,常见的块级元素有,div,section,article,header,footer,main.</span>
+   <p>这是 p 标签</p>
+   <h1>这是 h1 标签</h1>
+   <span>行内元素不会独占一行，常见的行内元素有：</span>
+   <span>这是 span 标签</span>
+   <a href="">这是 a 标签</a>
+   <img style="height: 100px; width: 100px;" 
+   src="https://www.php.net/images/logos/new-php-logo.svg" alt="" title="这是 img 标签">
+
+   <hr>
+   <h2>语义化标签</h2>
+   <!-- 可以理解为是有特殊名字的 div 标签 -->
+   <header>一般网页头部显示的东西都会放在 header 标签中</header>
+   <nav>一般导航栏会放在 nav 标签中间「navigation」</nav>
+   <section>一般网页中的具体内容会放在 section 标签</section>
+   <article>一般文章内容会放在 article 标签中</article>
+   <footer>一般网页的底部信息会放在 footer 标签中</footer>
+   <header>
+       <h1>欢迎宇宙访客</h1>
+       <nav>
+         <a href="#home">首页</a>
+         <a href="#about">关于</a>
+       </nav>
+     </header>
+     <section>
+       <h2>建造星际城市</h2>
+       <p>建造宇宙间间美好旅游星球</p>
+     </section>
+     <footer>
+       <p>版权所有 &copy; 2025</p>
+     </footer>
+
+   <div style="height: 500px;"></div>
+
+</body>
+</html>

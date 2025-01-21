@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <style>
+        #btn {
+            background-color: #4CAF50;
+            border: none;
+            color: rgb(171, 59, 212);
+            padding: 15px 32px;
+            text-align: center;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .event-object-test {
+            border: 1px solid black;
+            padding: 10px;
+            text-decoration: none;
+        }
+
+        .parent {
+            width: 100%;
+            height: 100%;
+            background-color: #f1f1f1;
+        }
+
+        .child {
+            width: 50%;
+            height: 50%;
+            background-color: #4CAF50;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>事件监听</h2>
+    <button id="btn">点击我</button>
+    <h2>按下键盘任意位置</h2>
+    <p id="output">键值将在这里显示。。。 </p>
+    <h2>表单事件</h2>
+    <form action="method = post" id="myForm">
+        <label for="fname">名字：</label>
+        <input type="text" id="fname" name="fname">
+        <label for="lname">姓氏：</label>
+        <input type="submit" value="提交">
+    </form>
+
+    <hr>
+    <h2>事件冒泡</h2>
+    <div class="parent" onclick="alert('父元素被点击 Parent Div Clicked')">
+        <div class="child" onclick="childClick(event)">点击我</div>
+    </div>
+
+    <script>
+        var btn = document.getElementById("btn");
+        console.log(document);
+        console.log(btn);
+        //上面有 id = btn
+
+        btn.addEventListener("click", function () {
+            console.log("按钮被点击");
+        })
+
+        btn.addEventListener("doubleclick", function () {
+            console.log("按钮被双击");
+        })
+
+        btn.addEventListener("mouseover", function () {
+            btn.style.backgroundColor = "red";
+        })
+
+        btn.addEventListener("mouseout", function () {
+            btn.style.backgroundColor = "blue";
+        })
+
+        //移除事件监听
+        function clickHandler() {
+            console.log("按钮被点击");
+        }
+        btn.addEventListener("click", clickHandler);//添加事件监听
+        btn.removeEventListener("click", clickHandler);//移除事件监听
+
+        //事件对象
+        let link = document.querySelector('a');
+        link.addEventListener('click', function (event) {
+            event.preventDefault();
+            console.log('点击链接');
+            console.log(event);
+            console.log(event.tyoe);
+            console.log(event.target);
+            console.log(event.currentTarget);
+        })
+
+        //监听键盘按下事件
+        document.addEventListener('keydown', function (event) {
+            if (event.code === 'Enter') {
+                console.log('按下回车键');
+            }
+
+            let key = event.key; //获取按下的键   
+            let keyCode = event.keyCode; //获取按下的键的编码
+
+            document.getElementById('output').textContent = '你按下了："${key}" (code: ${keyCode})';
+        })
+
+        // 监听窗口大小变化
+        window.addEventListener('resize', function (event) {
+            console.log('窗口大小发生变化')
+        })
+
+        // 页面加载完成
+        window.addEventListener('load', function (event) {
+            console.log('页面加载完成')
+        })
+
+        // 表单事件
+        let form = document.querySelector('form');
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+            console.log('表单提交');
+        });
+
+        form.addEventListener('change', function (event) {
+            console.log('表单内容发生变化');
+        });
+
+        let name = document.querySelector('#name');
+        name.addEventListener('focus', function (event) {
+            console.log('输入框获得焦点');
+        });
+
+        name.addEventListener('blur', function (event) {
+            console.log('输入框失去焦点');
+        });
+
+
+        //阻止事件冒泡
+
+        function childClick(event) {
+            alert('Child Div Clicked');
+
+            //阻止事件冒泡
+            event.stopPropagation();
+        }
+
+    </script>
+
+</body>
+
+</html>

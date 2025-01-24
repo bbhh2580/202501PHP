@@ -8,6 +8,7 @@
     <style>
         .container {
             display: flex;
+            flex-direction: column;
         }
            
         .section-center {
@@ -65,7 +66,7 @@
     <div class="container">
         <div class="section-left" style="flex: 4;"></div>
         <div class="section-center" style="flex: 6;"></div>
-           <h1>何をする</h1>
+           <h1 style=" text-align: center;">何をする</h1>
            <input type="text" id="todo-input" placeholder="新しい物">
            <button id="add-btn">追加</button>
            <ul id="todo-list"></ul>

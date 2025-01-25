@@ -13,8 +13,8 @@ echo $person['name'];
 $obj = new stdClass();
 
 /**
- * @method addScore(int $int)
- */
+ *///@method addScore(int $int)
+ //
 class Student
 {
     public string $name; //公共访问
@@ -28,9 +28,13 @@ class Student
         $this->name = $name;
         $this->age = $age;
     }
-}
 
-$student = new Student($name, $age,);
+public function addScore(int $score): void
+{
+
+
+    global $name, $age;
+    $student = new Student($name, $age,);
 echo $student->name;
 echo "<br>";
 
@@ -151,6 +155,7 @@ foreach ($studentA as $key => $value) {
     }
 }
 echo "</ul>";
+
 
 
 

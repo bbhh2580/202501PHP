@@ -14,7 +14,7 @@ $obj = new stdClass();
 
 /**
  *///@method addScore(int $int)
- //
+//
 class Student
 {
     public string $name; //公共访问
@@ -22,21 +22,24 @@ class Student
     protected string $gender; //仅限类的内部和子类访问
     private array $scores = []; // 惊现类的内部
 
-
     public function __construct($name, $age)
     {
         $this->name = $name;
         $this->age = $age;
     }
 
-public function addScore(int $score): void
-{
+    public function addScore(int $score): void
+    {
+        $this->scores[] = $score;
+    }
 
+    public function getScores(): array
+    {
+        return $this->scores;
+    }
+}
 
-    global $name, $age;
-    $student = new Student($name, $age,);
-echo $student->name;
-echo "<br>";
+$student = new Student($name, $age);
 
 $student->addScore(80);
 $student->addScore(90);

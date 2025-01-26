@@ -13,7 +13,7 @@ $countryShort = substr($country, 0, 2);
 echo "$country short name is: $countryShort  <br>";
 $str = "hello world!";
 echo substr($str, 4) . "<br>";
-echo substr($str, -6,5) . "<br>";
+echo substr($str, -6, 5) . "<br>";
 
 //查找字符串的位置 string position （p.s.在字符串中第一次出现的位置）
 $pos = strpos($str, "world");
@@ -31,14 +31,14 @@ echo "hello world! 转换成大写" . strtoupper("hello world!") . "<br>";
 
 
 //错别字替换
-$replaceStr = str_replace ("world", "PHP", $str, $count);
+$replaceStr = str_replace("world", "PHP", $str, $count);
 echo "The replaced string is: $replaceStr";
 echo "The replaced count is: $count <br>";
 
 
 //implode（）把数组元素组合成为一个字符串
 $arr = array("apple", "banana", "raspberry");
-$str = implode(", ",  $arr);
+$str = implode(", ", $arr);
 echo "The  implode string is: $str <br>";
 
 
@@ -50,7 +50,7 @@ echo "The md5 of $str is: $md5Str <br>";
 
 //explode()把字符串打散成数组
 $str = "HELLO, WORLD!";
-$arr = explode("E", $str,2);
+$arr = explode("E", $str, 2);
 var_dump($arr);
 echo "<br>";
 
@@ -72,7 +72,7 @@ echo "The count of array is: $count <br>";
 
 //在数组末尾添加元素
 $arr = array(1, 2, 3,);
-array_push($arr, 4,);
+array_push($arr, 4);
 var_dump($arr);
 echo "<br>";
 print_r($arr);
@@ -84,7 +84,8 @@ $arr = array(1, 2, 3, 4);
 $popValue = array_pop($arr);
 echo "The poped value is: $popValue <br>";
 //输出剩余的数组
-echo "The remaining array elements are:";print_r($arr);
+echo "The remaining array elements are:";
+print_r($arr);
 echo "<br>";
 
 
@@ -152,11 +153,11 @@ echo "<br>";
 
 //array_sum 计算数组中所有值的和
 $arr = array(1, 2, 3, 4, 5);
-$sum  = array_sum($arr);
+$sum = array_sum($arr);
 echo "The sum of array is: $sum <br>";
 
 
-//检查数组里是否有指定的key名或索引
+//array_key_exists()检查数组里是否有指定的key名或索引
 $student = array("name" => "Tom", "age" => 20);
 if (array_key_exists("name", $student)) {
     echo "The key name exists in array <br>";
@@ -165,7 +166,107 @@ if (array_key_exists("name", $student)) {
 }
 
 
-//
+//in_array()检查数组中是否存在某个值
+$arr = array(1, 2, 3, 4, 5);
+if (in_array(8, $arr)) {
+    echo "The value 3 exists in array <br>";
+} else {
+    echo "The value 3 is not exists in array <br>";
+}
+var_dump(in_array(7, $arr));
+echo "<br>";
+
+
+//array_search()在数组中搜索给定的值，如果成功则返回首个相应的键名
+$arr = array(1, 2, 3, 4, 5);
+$key = array_search(2, $arr);
+echo "The key of value 2 is: $key <br>";
+
+
+//array_keys()返回数组中部分的或所有的键名
+$arr = array("a" => 1, "b" => 2, "c" => 3);
+$keys = array_keys($arr);
+var_dump($keys);
+echo "<br>";
+
+
+//array_values():返回数组中所有的值
+$arr = array("a" => 1, "b" => 2, "c" => 3);
+$values = array_values($arr);
+var_dump($values);
+print_r($values);
+echo "<br>";
+
+
+//array_slice()从数组中取出一段;  slice:切片
+$arr = array("a", "b", "c");
+$sliceArr = array_slice($arr, 0, 2);
+var_dump($sliceArr);
+echo "<br>";
+
+
+//**文件处理函数**
+$content = file_get_contents("test.txt");
+echo "The content of file is: $content <br>";
+
+//如果文件不存在，则会创建一个; p.s. php需要有写入文件的权限
+$data = "Hello world!";
+file_put_contents("test_1.txt", $data, FILE_APPEND);
+//FILE_APPEND;将内容追加到文件末尾; append：追加，附加，增补
+
+
+//file_exists() 函数检查文件目录是否存在; exists: 存在
+if (file_exists("test_1.txt")) {
+    echo "The file exists <br>";
+} else {
+    echo "The file is not exists <br>";
+}
+
+//unlink() 删除文件
+$file = "test_3.txt";
+if (file_exists($file)) {
+    if (unlink($file)) {
+        echo "File '$file' has been deleted. <br>";
+    } else {
+        echo "Failed to delete '$file'. <br>";
+    }
+} else {
+    echo "File '$file' does not exist.<br>";
+}
+
+
+//mkdir() 新建目录 dir=directory:目录
+$dir = "test_3.dir";
+if (!file_exists($dir)) {
+    if (mkdir($dir)) {
+        echo "The directory '$dir' has been created. <br>";
+    } else {
+        echo "Failed to create the directory '$dir'. <br>";
+    }
+}
+
+
+//rmdir() 删除目录 remove directory:移除目录
+$dir = "test_3.dir";
+//is_dir() 判断给定文件名是否是一个目录
+if (is_dir($dir)) {
+    if (rmdir($dir)) {
+        echo "The directory '$dir' has been deleted. <br>";
+    } else {
+        echo "Failed to delete the directory '$dir'. <br>";
+    }
+}
+
+
+// chmod() 更改文件属性 change mode:更改模式
+$file = "test_4.txt";
+if (chmod($file, 0666)) {
+    echo "The file '$file' has been changed. <br>";
+} else {
+    echo "The file '$file' does not exist. <br>";
+}
+
+
 
 
 

@@ -267,12 +267,67 @@ if (chmod($file, 0666)) {
 }
 
 
+//日期与时间函数 date
+echo date("Y-m-d H:i:s") . "<br>";
 
 
+//返回当前的 Unix 时间戳
+//时间戳:从 1970 年 1 月 1 日 00:00:00 UTC 到现在的秒数
+echo time() . "<br>";
 
 
+//将任何英文文本日期时间描述解析为 Unix 时间戳
+$timestamp = strtotime("+1 day");
+echo "The timestamp is $timestamp <br>";
+echo date("Y-m-d H:i:s", $timestamp);
+echo "<br>";
 
 
+//JSON 处理函数
+//avaScript Object Notation 的缩写，意思是 JavaScript 对象表示法
+//JSON 数据由键值对（key-value）的形式表示，结构简单且易于阅读和解析。
+//json_encode() 对变量进行 JSON 编码
+$arr = array("name" => "Tom", "age" => 20);
+$json = json_encode($arr);
+echo "The json string is: $json <br>";
 
 
+//json_decode() 对 JSON 格式的字符串进行解码
+$json = '{"name": "Tom", "age": 20}';
+$arr = json_decode($json, true);
+var_dump($arr);
+echo "<br>";
+
+
+//数学函数
+//abs() 绝对值
+echo abs(-6.7) . "<br>";
+
+//ceil() 进一法取整  ceil:装天花板，抹天花板
+echo ceil(2.30) . "<br>";
+
+//floor() 舍去法取整 与ceil相反
+echo floor(2.80) . "<br>";
+
+//max() 找出最大值
+echo max(0,20,90,70,-22,-200) . "<br>";
+
+//min() 找出最小值
+echo min(0,20,90,70,-22,-200) . "<br>";
+
+//rand() 产生一个随机整数  rand:随机的
+echo rand(1,100) . "<br>";
+echo rand() . "<br>";
+
+//round() 对浮点数进行四舍五入
+echo round(0.30) . "<br>";
+
+//sqrt() 平方根  sqrt = square root:开平方根; root:根
+echo sqrt(81) . "<br>";
+
+
+//var_dump(); 打印变量的相关信息
+//print_r(); 打印人类可读的变量信息
+//debug_backtrace(); 产生一条回溯跟踪(backtrace)
+//debug:调试,除错； backtrace:回溯
 

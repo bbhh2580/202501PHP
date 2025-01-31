@@ -26,5 +26,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
+    //
+    $_SESSION["username"] = $username;
+    $_SESSION["loggedin"] = true;
+
+    echo "<script>alert('You are now logged in'); href='form_test.php'</script>";
 
 }

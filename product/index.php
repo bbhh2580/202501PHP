@@ -3,6 +3,7 @@
 
 echo "hello world";
 
+const BASE_PATH = __DIR__ . '/';
 // 自动加载控制器和模型
 spl_autoload_register(function ($className) {
     // 如果控制器文件存在，则包含该文件

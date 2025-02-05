@@ -12,12 +12,15 @@ const DB_PASS = '';
 const DB_NAME = '';
 
 // 链接数据库;
-try {
-    // 创建 PDO 实例并设置错误模式
-    $db = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME, DB_USER, DB_PASS);
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    // 捕获异常并输出错误信息
-    die('链接失败：' . $e->getMessage());
-}
+const DATABASE = [
+    'DB_HOST' => 'localhost',
+    'DB_NAME' => 'product_db',
+    'DB_USER' => 'root',
+    'DB_PASS' => '',
+];
 
+const UPLOAD_IMAGE = array(
+    'ALLOWED_TYPES' => array('png', 'jpg', 'gif', 'jpeg'), // 允许上传的图片类型
+    'MAX_SIZE' => 800000, // 允许上传的图片最大尺寸 800KB
+    'UPLOAD_DIR' => './Library/WebServer/Documents/php/202501PHP/frontend', // 上传文件的目录
+);

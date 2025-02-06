@@ -13,7 +13,7 @@ class Products
 
     public function getAllProducts(): array
     {
-        $sql = "SELECT * FROM `products`";
+        $sql = "SELECT * FROM `Products`";
         $stmt = $this->conn->query($sql);
 
         if ($stmt->rowCount() > 0) {

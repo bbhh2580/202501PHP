@@ -20,8 +20,9 @@ $controller = $_GET['controller'] ?? 'Product';
 $action = $_GET['action'] ?? 'list';
 
 // 创建控制器实例并调用对应方法
-$controller = new $controller . 'Controller';
-$controller->{$action}();
+$controllerName = $controller . 'Controller';
+$controller = new $controllerName();
+$controller->$action();
 
 // 大家开发的流程应该是先去写 config 定义数据库连接信息
 // 然后去写 databases 数据库连接

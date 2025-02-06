@@ -11,7 +11,7 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-white">
-    <a href="index.php" class="navbar-brand ms-5">Product</a>
+    <a href="../index.php" class="navbar-brand ms-5">Product</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -19,7 +19,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="index.php?action=detail&id=<?php if (isset($product['id'])) {
+                <a class="nav-link" href="../index.php?action=detail&id=<?php if (isset($product['id'])) {
                     echo $product['id'];
                 } ?>">返回商品详情</a>
             </li>
@@ -31,7 +31,7 @@
         <div class="col-md-3"></div>
         <div class="col-md-6">
             <h1>更新商品</h1>
-            <form action="index.php?action=save" method="post" enctype="multipart/form-data">
+            <form action="../index.php?action=save" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="id" value="<?php if (isset($product['id'])) {
                     echo $product['id'];
                 } ?>">

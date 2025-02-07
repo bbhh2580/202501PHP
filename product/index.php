@@ -6,12 +6,16 @@ echo "hello world";
 const BASE_PATH = __DIR__ . '/';
 // 自动加载控制器和模型
 spl_autoload_register(function ($className) {
+
     // 如果控制器文件存在，则包含该文件
     if (file_exists('controllers/' . $className . '.php')) {
+
         include 'controllers/' . $className . '.php';
         // 如果模型文件存在，则包含该文件
     } else if (file_exists('models/' . $className . '.php')) {
+        var_dump($className);
         include 'models/' . $className . '.php';
+
     }
 });
 

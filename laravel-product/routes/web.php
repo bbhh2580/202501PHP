@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+// 自定义首页路由
 Route::get('/', [ProductsController::class, 'index'])->name ('home');
 
 

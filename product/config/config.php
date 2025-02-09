@@ -3,13 +3,13 @@
 // config/config.php - 数据库配置文件,定义数据库连接参数
 
 // 定义数据库主机;
-const DB_HOST = 'localhost';
+//const DB_HOST = 'localhost';
 // 定义数据库名称;
-const DB_USER = 'root';
+//const DB_USER = 'root';
 // 定义数据库用户名;
-const DB_PASS = '';
+//const DB_PASS = '';
 // 定义数据库密码;
-const DB_NAME = '';
+//const DB_NAME = '';
 
 // 链接数据库;
 const DATABASE = [

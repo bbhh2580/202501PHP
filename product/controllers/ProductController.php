@@ -1,6 +1,6 @@
 <?php
 
-require_once BASE_PATH . 'models/Products.php';
+require_once BASE_PATH . 'models/Product.php';
 
 class ProductController
 {
@@ -9,7 +9,7 @@ class ProductController
     // 构造函数,实例化商品模型
     public function __construct()
     { var_dump(1);
-        $this->productModel = new Products();
+        $this->productModel = new Product();
     }
 
     // 查询数据库中的所有产品数据，并显示在页面上

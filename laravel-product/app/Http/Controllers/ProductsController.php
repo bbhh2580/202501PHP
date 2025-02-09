@@ -11,6 +11,7 @@ use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 
+
 class ProductsController extends Controller
 {
     // Laravel 中的開發順序是：路由(routes) -> 控制器(Controllers) -> 模型(Models) -> 視窗(Views)
@@ -21,7 +22,8 @@ class ProductsController extends Controller
      */
     public function index(): Factory|View|Application
     {
-        return view('products.index', ['products' => Product::all()]);
+        $products = Product::orderBy('created_at')->paginate($this->perPage);
+        return view('products/index', compact('products'));
     }
 
     /**
@@ -112,4 +114,4 @@ return view('products/edit', ['product' => $product]);
         return redirect()->back();
     }
 }
-echo 'ok';
+

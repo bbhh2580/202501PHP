@@ -2,7 +2,7 @@
 
 require_once BASE_PATH . './database/db.php';
 
-class Products
+class Product
 {
     private ?PDO $conn;
 

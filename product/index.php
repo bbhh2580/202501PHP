@@ -1,7 +1,6 @@
 <?php
 // index.php - 项目入口文件，负责加载控制器和模型，并分发请求
 
-echo "hello world";
 
 const BASE_PATH = __DIR__ . '/';
 // 自动加载控制器和模型

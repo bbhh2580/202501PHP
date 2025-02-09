@@ -13,11 +13,17 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-// 自定义首页路由
-Route::get('/', [ProductsController::class, 'index'])->name ('home');
 
+Route::get('/', [ProductsController::class, 'index'])->name('home');
+//
+//Route::get('products/', [ProductsController::class, 'index'])->name('products.index');
+//Route::get('products/{product}', [ProductsController::class, 'show'])->name('products.show');
+//Route::get('products/create', [ProductsController::class, 'create'])->name('products.create');
+//Route::post('products/', [ProductsController::class, 'store'])->name('products.store');
 
+// Restful style
 Route::resource('products', ProductsController::class);
+Route::get('products/{product}/show-delete-page', [ProductsController::class, 'showDeletePage'])->name('products.showDeletePage');
 //GET|HEAD        products ..................... products.index › ProductsController@index 列表页
 //POST            products ..................... products.store › ProductsController@store 新增
 //GET|HEAD        products/create ............ products.create › ProductsController@create 展示新增表单
@@ -26,7 +32,6 @@ Route::resource('products', ProductsController::class);
 //DELETE          products/{product} ....... products.destroy › ProductsController@destroy 删除
 //GET|HEAD        products/{product}/edit ........ products.edit › ProductsController@edit 展示编辑表单
 
-// 一部分 Laravel 生成文件命令
 // 一部分 Laravel 生成文件命令
 // php artisan make:model Product 生成模型
 // php artisan make:request ProductPostRequest 生成表单验证请求

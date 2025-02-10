@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Storage;
 
 class ProductsController extends Controller
 {
-     private int $perPage = 10;
+
     /**
      * Display a listing of the resource.
      *

@@ -43,4 +43,4 @@ Route::get('products/{product}/show-delete-page', [ProductsController::class, 's
 // php artisan view:clear 清除视图缓存
 // php artisan route:clear 清除路由缓存
 
-Route::resource('users', UsersController::class);
+Route::resource('user', UsersController::class);

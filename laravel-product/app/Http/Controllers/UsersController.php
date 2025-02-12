@@ -17,19 +17,20 @@ class UsersController extends Controller
 //
 //         创建并保存一个新用户
         $user = new User();
-        $user->username = request('username') ?? 'LuStormstout';
-        $user->password = bcrypt(request('password') ?? '123456');
-        $user->email = request('email') ?? 'lu@example.com';
-        try {
-            $user->save();
-            echo 'User created successfully!';
-        } catch (Exception $e) {
-            throw new Exception($e->getMessage());
-        }
+        $user->username = request('username') ?? 'user_' . time();
+        $user->password = bcrypt(request('password') ?? '');
+        $user->email = request('email') ?? 'hana@gmail.com';
 
-        // 使用 create 方法创建并保存用户
+//        try {
+//            $user->save();
+//            echo 'User created successfully!';
+//        } catch (Exception $e) {
+//            throw new Exception($e->getMessage());
+//        }
+
+//         使用 create 方法创建并保存用户
 //        $user = User::create([
-//            'username' => 'LuStormstout1',
+//            'username' => 'hana',
 //            'password' => bcrypt('123456'),
 //            'email' => 'lu1@example.com'
 //        ]);
@@ -49,6 +50,15 @@ class UsersController extends Controller
 //        $user = User::find(2);
 //        echo $user->username;
 
+        //上一個報錯
+//        $user = User::find(2);
+//
+//        if ($user) {
+//            echo $user->username;
+//        } else {
+//            echo "Error: User not found!";
+//        }
+
         // 使用查询构造器查找用户
 //        $users = User::where('gender', 2)
 //            ->orderBy('id', 'desc')
@@ -67,28 +77,35 @@ class UsersController extends Controller
 //        $user->delete();
     }
 
-    public function show()
+    // 顯示單個用戶信息
+    public function show($id)
     {
-
+        $user = User::find($id);
+        return view('users.show', compact('user'));
     }
 
+
+
+// 創建用戶
     public function create()
     {
-
+        return view('users.create');
     }
 
-    public function store()
-    {
-
     }
-
-    public function edit()
-    {
-
-    }
-
-    public function update()
-    {
-
-    }
-}
+//
+//    public function store()
+//    {
+//
+//    }
+//
+//    public function edit()
+//    {
+//
+//    }
+//
+//    public function update()
+//    {
+//
+//    }
+//}
